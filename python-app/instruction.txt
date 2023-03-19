@@ -1,0 +1,9 @@
+docker build .
+docker run sha256:a2742099db084bfb25da8deb3a3bc64fce9a7096c6ce4dc0da9a779c0e055e79
+docker ps
+docker stop gallant_galois
+docker run -it --name pyhton-container sha256:0e0d769a460ae118a9cd9a0cd8b55d5aa2d72a2e17b6fa32ba45770595b3cf7f
+docker container prune
+docker rmi 0e0d769a460a
+docker build -t python-image .
+docker run -it --rm --name python-container sha256:0e0d769a460ae118a9cd9a0cd8b55d5aa2d72a2e17b6fa32ba45770595b3cf7f

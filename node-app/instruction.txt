@@ -1,0 +1,10 @@
+docker build .
+docker run -p:3000:3000 sha256:a2742099db084bfb25da8deb3a3bc64fce9a7096c6ce4dc0da9a779c0e055e79
+docker ps
+docker stop happy_chatelet
+docker run -p:3000:3000 --name node-container sha256:3c52bf7e96abea76366a0b57f0fec4fe347ae6c7bc3f2f8fde8d35406a8f641f
+docker container prune
+docker stop 66164135ae01
+docker rmi 3c52bf7e96ab
+docker build -t node-image .
+docker run -p3000:3000 --rm --name node-container sha256:3c52bf7e96abea76366a0b57f0fec4fe347ae6c7bc3f2f8fde8d35406a8f641f
